@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Rock papers scissors</title>
+<body>
+    <button onclick="
+        cmove=pickcmove();
+        if(cmove==='rock'){
+            alert('you pick rock and computer picked rock so draw');
+        }
+        else if(cmove==='paper'){
+            alert('You pick rock and compouter picked paper so you lose!');
+        }
+        else if(cmove==='scissors'){
+            alert('You pick rock and computer pick scissors you win');
+        }
+        ">rock</button>
+    <button onclick="
+       cmove=pickcmove();
+        if(cmove==='rock'){
+            alert('you pick paper and computer picked rock so you win');
+        }
+        else if(cmove==='paper'){
+            alert('You pick paper and compouter picked paper so draw!');
+        }
+        else if(cmove==='scissors'){
+            alert('You pick paper and computer pick scissors you lose');
+        }
+    ">papers</button>
+    <button onclick="
+     cmove=pickcmove();
+        if(cmove==='rock'){
+            alert('you pick scissors and computer picked rock so you you lose');
+        }
+        else if(cmove==='paper'){
+            alert('You pick scissors and compouter picked paper you win');
+        }
+        else if(cmove==='scissors'){
+            alert('You pick scissors and computer pick scissors draw');
+        }
+    ">scissors</button>
+    <script>
+        function pickcmove(){
+            let rand=Math.random();
+            let cmove='';
+            if(rand>=0 && rand<=1/3){
+                cmove='rock';
+            }
+            else if(rand>1/3 && rand<=2/3){
+                cmove='paper';
+            }
+            else if(rand>2/3 && rand<=1){
+                cmove='scissors';
+            }
+            return cmove;
+        }
+    </script>
+</body>
+</html>
