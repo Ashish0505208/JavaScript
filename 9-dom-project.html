@@ -1,23 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>dom project</title>
+    <title>DOM Project</title>
 </head>
 <body>
     <p>
-        youtube subscribe button
+        YouTube Subscribe Button
     </p>
-    <button class="sub" onclick="
-    subscribe();
-    ">subscribe</button>
+    <button class="sub" onclick="subscribe();">Subscribe</button>
+
+    <p>Amazon Shipping Charges</p>
+    <input type="text" placeholder="Enter amount" class="inputf" onkeydown="keydown(event);">
+    <button onclick="calc();">Calculate</button>
+    <p class="out"></p>
     <script>
-        function subscribe(){
-            const element = document.querySelector('.sub');
-            if(element.innerText==='subscribe'){
-                element.innerHTML='subscribed';
+        function keydown(event) {
+            if (event.key === 'Enter') {
+                calc();
             }
-            else{
-                element.innerHTML='subscribe';
+        }
+
+        function calc() {
+            const amount = document.querySelector('.inputf');
+            let cost = Number(amount.value);
+            if (cost <= 40) {
+                cost += 10;
+            }
+            document.querySelector('.out').innerHTML = `$${cost}`;
+        }
+
+        function subscribe() {
+            const element = document.querySelector('.sub');
+            if (element.innerText === 'Subscribe') {
+                element.innerHTML = 'Subscribed';
+            } else {
+                element.innerHTML = 'Subscribe';
             }
         }
     </script>
